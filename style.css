@@ -10,7 +10,7 @@
 }
 body {
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: normal;
     line-height: 1.5;
 }
@@ -20,3 +20,75 @@ a, a:hover {
 h1, h2, h3 {
     font-weight: normal;
 }
+
+/* 
+    Hero area css
+*/
+.hero-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url("banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.hero-content {
+    width: 550px;
+    text-align: center;
+}
+.hero-content h1 {
+    font-size: 35px;
+    color: #049DE2;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+
+}
+.hero-content a {
+    background-color: #E34047;
+    padding: 10px 20px;
+    display: inline-block;
+    color: aliceblue;
+}
+
+/* 
+ Video area
+*/
+.video-area {
+    padding: 80px 0;
+}
+
+/* preloader area css */
+#preloader-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#preloader-area::after,
+#preloader-area::before {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 100%;
+    background-color: #111;
+    z-index: -1;
+    transition: .5s ease-in-out;
+
+}
+#preloader-area::after {left: 0;}
+#preloader-area::before {right:0}
+
+.page-loaded .spinner-border {
+    display: none;
+}
+#preloader-area.page-loaded::after {left: -50%;}
+#preloader-area.page-loaded::before {right:-50%}
